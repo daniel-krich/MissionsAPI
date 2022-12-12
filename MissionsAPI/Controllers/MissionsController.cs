@@ -28,7 +28,7 @@ namespace MissionsAPI.Controllers
         {
             MissionEntity? mission = await _missionService.GetMission(id);
             if (mission is null)
-                Response.StatusCode = 404;
+                Response.StatusCode = StatusCodes.Status404NotFound;
             return mission;
         }
 
